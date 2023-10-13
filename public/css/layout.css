@@ -170,7 +170,7 @@
   
   button, a { transition: var(--transition); }
   
-  .btn {
+  .featured-car .btn {
     position: relative;
     background: var(--background, var(--carolina-blue));
     color: var(--color, var(--white));
@@ -209,7 +209,8 @@
   
   .h1,
   .h2,
-  .h3 {
+  .h3, 
+  .h4{
     color: var(--space-cadet);
     font-family: var(--ff-nunito);
     line-height: 1.4;
@@ -230,8 +231,15 @@
   .w-100 { width: 100%; }
   
   
-  
-  
+  .error{
+    color: red;
+  }
+  #profile-picture{
+    border-radius: 100%;
+    border-color: var(--color, var(--white));
+    border-style: solid;
+    
+  }
   
   /*-----------------------------------*\
     #HEADER
@@ -316,7 +324,7 @@
     transition: 0.5s cubic-bezier(0.33, 0.85, 0.56, 1.02);
   }
   
-  .navbar-link {
+ .nav-link , .navbar-link {
     color: var(--independence);
     font-family: var(--ff-nunito);
     font-size: var(--fs-6);
@@ -324,7 +332,7 @@
     margin-bottom: 15px;
   }
   
-  .navbar-link:is(:hover, :focus) { color: var(--carolina-blue); }
+ .navbar-link:is(:hover, :focus) { color: var(--carolina-blue); }
   
   .overlay {
     position: fixed;
@@ -983,10 +991,10 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-  
+   
     .hero-banner {
       display: block;
-      background: url("/images/bannerImages/hero-banner.jpg") no-repeat;
+      background: url("/images/bannerImages/hatchback.png") no-repeat;
       background-size: cover;
       background-position: left;
       position: absolute;
@@ -1129,7 +1137,7 @@
     .navbar,
     .navbar.active { all: unset; }
   
-    .navbar-link {
+    .nav-link , .navbar-link {
       margin-bottom: 0;
       font-weight: var(--fw-600);
     }
@@ -1257,5 +1265,22 @@
   
  }
 
+ .car_register_form{
+  padding-top: 75px;
+  
+ }
+ .car_register_form form{
+  border-color:var(--manatee);
+  border-style: solid;
+  border-width: 2px;
+  border-radius:15px;
+  
+ }
+ @media (min-width: 601px) {
+  .car_register_form{
+     
+  }
 
- 
+
+
+  }

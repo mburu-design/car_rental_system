@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('category');
             $table->string('make');
             $table->string('model');
-            $table->enum('fuel_type',['diesel','petrol','electric']);
+            $table->enum('fuel_type', ['diesel', 'petrol', 'electric']);
             $table->integer('year');
-            $table->enum('transmission_type',['automatic','manual']);
+            $table->enum('transmission_type', ['automatic', 'manual']);
             $table->string('exterior_front_image');
             $table->string('exterior_side_image');
             $table->string('exterior_rear_image');

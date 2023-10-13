@@ -1,15 +1,21 @@
 <div class="card">
     <div class="card-header text-start">
         <h6 class="fs-6">
-            My requests
+            My Bookings
         </h6>
     </div>
     <div class="card-body">
         <div class="row m-2">
             <div class="col-4">
-                <img src="/images/bannerImages/limo.png" alt="car image" class="img img-fluid rounded">
+                <img src="/images/bannerImages/car-1.jpg" id="profile-picture" alt="car image"
+                    class="img img-fluid rounded">
             </div>
             <div class="col-6">
+                <div class="row text-start mb-2 text-primary">
+                    <small>
+                        booking id
+                    </small>
+                </div>
                 <div class="row text-start">
                     <small>
                         Subaru forester Xt 2016
@@ -19,7 +25,7 @@
                     <small>
                         <div class="row text-start">
                             <small>
-                                request date
+                                booking date
                             </small>
                         </div>
                         <div class="row my-2 text-start">
@@ -49,7 +55,7 @@
                         </div>
                         <div class="row">
                             <h6 class="fs-6 text-success text-start">
-                                Accepted
+                                booked
                             </h6>
                         </div>
                     </small>
@@ -57,23 +63,10 @@
             </div>
             <div class="col-2">
                 <p class="pt-0 text-danger">
-                    See details
+                    rate this booking
                 </p>
             </div>
         </div>
     </div>
-    <div class="card-footer">
-        <div class="row">
-            <div class="col-6 text-start">
-                <button class="btn btn-danger">
-                    cancel request
-                </button>
-            </div>
-            <div class="col-6 text-end">
-                <button class="btn btn-success">
-                    proceed to booking
-                </button>
-            </div>
-        </div>
-    </div>
+
 </div>

@@ -1,6 +1,6 @@
 <div class="row my-4 text-center container" style="padding-top:20px;">
-    <h6 class="fs-6 py-4 text-start">
-        rider profile
+    <h6 class="fs-6 py-4 text-start h3">
+        Lessor profile
     </h6>
 
     <div class="container row rider-profile">
@@ -22,7 +22,7 @@
                             <i class="fa fa-taxi"></i>
                         </div>
                         <div class="col-10 description">
-                            Requests
+                            My Cars
                         </div>
                     </button>
                 </div>
@@ -33,7 +33,7 @@
                             <i class="fa fa-ticket"></i>
                         </div>
                         <div class="col-10 description">
-                            Bookings
+                            My online listing
                         </div>
                     </button>
                 </div>
@@ -43,7 +43,7 @@
                             <i class="fa fa-car"></i>
                         </div>
                         <div class="col-10 description">
-                            My rides
+                            My Car Leases
                         </div>
                     </button>
                 </div>
@@ -54,7 +54,7 @@
 
                         </div>
                         <div class="col-10 description">
-                            Your ratings
+                            My Car ratings
                         </div>
                     </button>
 
@@ -66,7 +66,7 @@
                             <i class="fa fa-message"></i>
                         </div>
                         <div class="col-10 description">
-                            Inbox
+                            New Requests
                         </div>
                     </button>
 
@@ -92,35 +92,36 @@
         <div class="col-9">
             <div class="card">
                 @if ($setView==0)
-                @livewire('profile.account-overview')
+                @livewire('lessor.lessor-profile.profile-over-view')
 
                 @elseif ($setView==1)
-                @livewire('profile.my-requests')
+                @livewire('lessor.lessor-profile.my-cars')
+
 
                 @elseif($setView==2)
-                @livewire('profile.my-bookings')
-
+                @livewire('lessor.lessor-profile.my-online-listings')
 
                 @elseif($setView==3)
-                <h1>{{$setView}}</h1>
+                @livewire('lessor.lessor-profile.my-leases')
 
                 @elseif($setView==4)
-                @livewire('profile.driver-ratings')
+                @livewire('lessor.lessor-profile.my-car-ratings')
 
                 @elseif($setView==5)
-                @livewire('profile.notifications')
+
+                @livewire('lessor.lessor-profile.my-car-requests')
 
                 @elseif($setView==6)
-                @livewire('profile.payments')
+                @livewire('lessor.lessor-profile.payments')
 
                 @elseif($setView==7)
                 <h1>{{$setView}}</h1>
 
                 @else
-                @livewire('profile.account-overview')
+                @livewire('lessor-profile.account-overview')
 
                 @endif
-                {{-- --}}
+
             </div>
         </div>
         <script>

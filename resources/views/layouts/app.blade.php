@@ -36,20 +36,10 @@
         <header class="header" data-header>
             @livewire('navbar')
         </header>
-        
-       <!--Banner section-->
-        <section class="section hero" id="home">
-            @livewire('banner-section')
+        <section class="body">
+            @yield('content')
+
         </section>
-        <!--feactured cars section-->
-       
-        <section class="container">
-            @livewire('feactured-cars')
-        </section> 
-        
-        <section class="steps">
-            @livewire('leasing-steps')
-        </section> 
        
         <section class="footer">
             @livewire('footer')
@@ -58,7 +48,6 @@
         @livewireScripts
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-       
       <script>
         
       </script>
