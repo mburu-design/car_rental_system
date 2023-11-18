@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Listings extends Model
 {
     use HasFactory;
-    
-    protected $fillable=[
+
+    protected $fillable = [
         'pickup_date',
         'dropoff_date',
         'pickup_time',
@@ -21,10 +21,16 @@ class Listings extends Model
         'total_cost'
     ];
 
-    public function fleet() : BelongsTo{
+    public function fleet(): BelongsTo
+    {
         return $this->belongsTo(Fleet::class);
     }
-    public function rideRequest():HasOne{
-        return $this->hasOne(RideRequests::class);
+    public function carOwner(): BelongsTo
+    {
+        return $this->belongsTo(CarOwners::class);
+    }
+    public function rideRequest(): HasMany
+    {
+        return $this->hasMany(RideRequests::class);
     }
 }

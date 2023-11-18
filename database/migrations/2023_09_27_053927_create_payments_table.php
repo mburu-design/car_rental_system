@@ -14,10 +14,16 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ride_requests_id')->references('id')->on('ride_requests')->onDelete('cascade');
-            $table->enum('payment_method',['mpesa','card']);
+            $table->enum('payment_method', ['mpesa', 'card']);
             $table->float('amount');
             $table->string('transaction_code')->nullable();
             $table->string('payment_phone')->nullable();
+            $table->string('reference')->nullable();
+            $table->string('description')->nullable();
+            $table->string('MerchantRequestID')->nullable();
+            $table->string('CheckoutRequestID')->nullable();
+            $table->enum('status', ['paid', 'requested', 'declined'])->default('requested');
+
             $table->timestamps();
         });
     }

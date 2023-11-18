@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('driver_ratings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('riders_id')->references('id')->on('riders')->onDelete('cascade');
+            $table->foreignId('rater_id')->references('id')->on('users')->onDelete('cascade');
             $table->smallInteger('score');
             $table->text('review_comments');
             $table->timestamps();

@@ -28,6 +28,17 @@ class Login extends Component
         try {
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
+                if (session()->has('intended_action')) {
+
+                    // Get the intended action from the session
+                    $intendedAction = session('intended_action');
+
+                    // Clear the intended action from the session
+                    session()->forget('intended_action');
+
+                    // Redirect the user to the intended action
+                    return redirect()->route($intendedAction);
+                }
                 return $this->redirect('/home', navigate: true);
             }
             return back()->with('error', 'Incorrect email or password');

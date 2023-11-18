@@ -10,14 +10,13 @@ use Illuminate\Support\Facades\Auth;
 class Logout extends Controller
 {
     public function logout(Request $request): RedirectResponse
-{
-    Auth::logout();
- 
-    $request->session()->invalidate();
- 
-    $request->session()->regenerateToken();
- 
-    return redirect('/');
-}
+    {
+        Auth::logout();
 
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }

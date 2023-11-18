@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\CarOwners;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,9 @@ class AuthLessor
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (DB::table('car_owners')->where('user_id', '=', Auth::user()->id)->get()) {
+        $ownerId = Auth::user()->id;
+        $exists = CarOwners::where('user_id', $ownerId)->exists();
+        if ($exists) {
             return $next($request);
         }
         return redirect('/lessor/register');

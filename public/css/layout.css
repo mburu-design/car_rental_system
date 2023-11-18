@@ -158,7 +158,14 @@
   
   ::-webkit-scrollbar-thumb:hover { background: hsla(219, 14%, 60%, 0.5); }
   
-  
+  .profilePhoto{
+    border-style: solid;
+    border-radius: 80%;
+    border-color:hsl(204, 80%, 63%);
+    border-width: 2px;
+    width: 80px;
+    height: 80px;
+  }
   
   
   
@@ -335,7 +342,6 @@
  .navbar-link:is(:hover, :focus) { color: var(--carolina-blue); }
   
   .overlay {
-    position: fixed;
     top: 70px;
     background: hsl(216, 38%, 95%);
     left: 0;
@@ -1280,7 +1286,110 @@
   .car_register_form{
      
   }
+ }
+
+ /*car ratings styling*/
+ .glyphicon { margin-right:5px;}
+ .rating .glyphicon {font-size: 22px;}
+ .rating-num { margin-top:0px;font-size: 54px; }
+ .progress { margin-bottom: 5px;}
+ .progress-bar { text-align: left; }
+ .rating-desc .col-md-3 {padding-right: 0px;}
+ .sr-only { margin-left: 5px;overflow: visible;clip: auto; }
 
 
+ /* checkout page styling */
 
-  }
+
+ 
+ 
+ 
+ 
+ .desc{
+   background-color: #f0edeb;
+   margin-top: 5%;
+   margin-left:0;
+   margin-right:50px;
+   margin-bottom: 4%;
+   }
+ 
+   
+   div.card.main{
+     margin:0px!important;
+   }
+ 
+ 
+ .quantity,.shipping,.promocode,.subtotal,.cardAndExpire,.nameAndcvc{
+   margin:5%;
+   color:#6c757d!important
+ }
+ 
+ .heading1{
+     margin:5%;
+ font-size: 25px;
+ }
+ 
+ .heading2{
+     margin:5%;
+ margin-top:15%;
+ font-size: 20px;
+ }
+ 
+ .payment{
+   background-color: #f0edeb;
+   padding:3px;
+   margin-top: 15%;
+ }
+ 
+ .text1{
+ color:black;
+ font-weight: 700;
+ }
+ 
+ .purchaseLink{
+   text-decoration: none;
+ }
+ 
+ .row1{
+ font-size:12px;
+ }
+ 
+ .row2{
+   font-weight: 600;
+ }
+ 
+ .subRow{
+   margin-left:10%;
+ margin-bottom: 2%;
+   margin-top:5%;
+ }
+ 
+ p.cardAndExpireValue,p.nameAndcvcValue{
+   margin:5%;
+   margin-bottom: 10%;
+ font-weight: 600;}
+ 
+ p.nameAndcvc,p.cardAndExpire{
+   margin-bottom: -10px;
+ }
+ 
+ .total{
+   margin:5%;
+ }
+ 
+ .totalText{
+   font-weight: 700;
+ 
+ }
+ .totalText2{
+  font-weight: 700;
+   font-size:30px;
+ }
+ 
+ .card-img-top {
+     width: 100%;
+     border-top-left-radius: calc(.25rem - 1px);
+     border-top-right-radius: calc(.25rem - 1px);
+     height: 430px;
+ }
+ /* end of checkout page styling */

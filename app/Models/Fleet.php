@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Fleet extends Model
 {
     use HasFactory;
-    protected $fillable =[
+    protected $fillable = [
         'car_registration_number',
         'insurance_provider',
         'insurace_policy_number',
@@ -30,11 +31,17 @@ class Fleet extends Model
         'number_of_doors'
     ];
 
-    public function carOwner() : BelongsTo{
+    public function carOwner(): BelongsTo
+    {
         return $this->belongsTo(CarOwners::class);
     }
 
-    public function listing() : HasOne{
+    public function listing(): HasOne
+    {
         return $this->hasOne(Listings::class);
+    }
+    public function rideRequest(): HasMany
+    {
+        return $this->hasMany(RideRequests::class);
     }
 }

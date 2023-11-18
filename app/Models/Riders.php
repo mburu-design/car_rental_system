@@ -18,10 +18,16 @@ class Riders extends Model
         'payment_phone'
     ];
 
-   public function user(): BelongsTo{
-    return $this->belongsTo(User::class);
-   }
-   public function requests():HasMany{
-    return $this->hasMany(RideRequests::class);
-   }
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    public function requests(): HasMany
+    {
+        return $this->hasMany(RideRequests::class);
+    }
+    public function booking(): HasMany
+    {
+        return $this->hasMany(Bookings::class);
+    }
 }

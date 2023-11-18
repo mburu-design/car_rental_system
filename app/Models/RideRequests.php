@@ -10,14 +10,30 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class RideRequests extends Model
 {
     use HasFactory;
-    public function requestListing(): BelongsTo{
-        return $this->belongsTo(Listings::class);
-    }
-    public function rider(): BelongsTo{
-        return $this->belongsTo(Riders::class);
+    public function requestListing(): BelongsTo
+    {
+        return $this->belongsTo(Listings::class, 'listing_id');
     }
 
-    public function payment(): HasOne{
+    public function fleet(): BelongsTo
+    {
+        return $this->belongsTo(Fleet::class, 'fleet_id');
+    }
+    public function rider(): BelongsTo
+    {
+        return $this->belongsTo(Riders::class, 'riders_id');
+    }
+    public function carOwner(): BelongsTo
+    {
+        return $this->belongsTo(CarOwners::class, 'car_owners_id');
+    }
+
+    public function payment(): HasOne
+    {
         return $this->hasOne(Payments::class);
+    }
+    public function booking(): HasOne
+    {
+        return $this->hasOne(Bookings::class);
     }
 }

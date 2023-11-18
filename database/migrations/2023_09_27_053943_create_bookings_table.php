@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ride_requests_id')->references('id')->on('ride_requests')->onDelete('cascade');
+            $table->foreignId('car_owners_id')->references('id')->on('car_owners')->onDelete('cascade');
+
             $table->foreignId('payments_id')->references('id')->on('payments')->onDelete('cascade');
             $table->foreignId('riders_id')->references('id')->on('riders')->onDelete('cascade');
             $table->timestamps();

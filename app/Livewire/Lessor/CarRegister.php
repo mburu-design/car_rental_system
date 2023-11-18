@@ -108,7 +108,7 @@ class CarRegister extends Component
         $fleet->make = $this->brand;
         $fleet->model = $this->carModel;
         $fleet->fuel_type = $this->fuelType;
-        $fleet->year = $this->car_owner_id;
+        $fleet->year = $this->makeYear;
         $fleet->transmission_type = $this->transmission;
         $fleet->exterior_front_image = $exteriorFrontImage;
         $fleet->exterior_side_image = $exteriorSideImage;

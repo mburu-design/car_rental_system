@@ -18,16 +18,20 @@
       </li>
 
       <li>
+        <a href="{{Route('car_register')}}" class="navbar-link" data-nav-link wire:navigate>Rent your car</a>
+      </li>
+      <li>
         <a href="#" class="navbar-link" data-nav-link>About us</a>
       </li>
 
       <li>
-        <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+        <a href="#blog" class="navbar-link" data-nav-link>
+          <i class="fa fa-bell fa-1x">
+          </i>
+          <span
+            class="badge position-absolute position-absolute top-25 start-75 rounded-pill badge-notification bg-danger">0</span>
+        </a>
       </li>
-      <li>
-        <a href="{{Route('car_register')}}" class="navbar-link" data-nav-link wire:navigate>Rent your car</a>
-      </li>
-
     </ul>
   </nav>
 
@@ -48,6 +52,9 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       <li><a class="dropdown-item" href="{{Route('dashboard')}}" wire:navigate>profile</a></li>
+      @if ($isLessor)
+      <li><a class="dropdown-item" href="{{Route('lessor_profile')}}" wire:navigate>Lessor profile</a></li>
+      @endif
       <li><a class="dropdown-item" href="{{Route('logout')}}" wire:navigate>Log out</a></li>
     </ul>
     @else

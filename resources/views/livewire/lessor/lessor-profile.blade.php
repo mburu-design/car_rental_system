@@ -2,7 +2,13 @@
     <h6 class="fs-6 py-4 text-start h3">
         Lessor profile
     </h6>
-
+    <p class="text-center justify-content-between">
+        @if (session()->has('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+    @endif
+    </p>
     <div class="container row rider-profile">
         <div class="col-3 h-100">
             <aside class="card ">
@@ -109,7 +115,7 @@
 
                 @elseif($setView==5)
 
-                @livewire('lessor.lessor-profile.my-car-requests')
+                @livewire('lessor.lessor-profile.my-new-request')
 
                 @elseif($setView==6)
                 @livewire('lessor.lessor-profile.payments')

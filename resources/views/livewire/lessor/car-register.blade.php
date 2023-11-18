@@ -2,7 +2,7 @@
     <form action="#" class="row w-50 p-2 my-2" wire:submit.prevent='carRegister' style="">
         <p class=" h3">Car registration form</p>
         <div class="row  g-2">
-            <label for="driverDetails" class="form-label text-start h3">Insurance details</label>
+            <label for="driverDetails" class="form-label text-start h3">Insurance details {{Auth::user()->id}}</label>
             <div class=" col-lg-6 col-md-6 col-sm-12 form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" placeholder="insurance provider"
                     wire:model="insuranceProvider">

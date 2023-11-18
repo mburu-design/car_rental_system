@@ -1,0 +1,3 @@
+ function bookingRequest(){
+    alert('sucesss');
+}

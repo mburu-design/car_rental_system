@@ -230,7 +230,10 @@
   .w-100 { width: 100%; }
   
   
-  
+  .separator {
+    border-left: 1px solid #000; /* Adjust border properties as needed */
+    height: 100%; /* Match the height of the columns */
+}
   
   
   /*-----------------------------------*\

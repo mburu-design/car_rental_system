@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('car_ratings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('fleet_id')->references('id')->on('fleets')->onDelete('cascade');
+            $table->foreignId('rater_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->smallInteger('score');
             $table->text('review_comments');
             $table->timestamps();

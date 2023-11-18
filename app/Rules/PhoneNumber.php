@@ -15,10 +15,10 @@ class PhoneNumber implements ValidationRule
      * @param  \Closure(string): \Illuminate\Translation\PotentiallyTranslatedString  $fail
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
-    {   $phone= '+254'.$value;
+    {
+        $phone = '+254' . $value;
         if (DB::table('users')->where('telephone', $phone)->exists()) {
-            $fail("phone number alraedy registered");
-
+            $fail("phone number already registered");
         }
     }
 }
