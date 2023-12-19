@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'lessorAuth' => \App\Http\Middleware\AuthLessor::class,
         'intended_action' => \App\Http\Middleware\IntendedAction::class,
         'driverAuth' => \App\Http\Middleware\RidersMiddleware::class,
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
     ];
 }

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\auth\Logout;
 use App\Http\Controllers\MpesaController;
+use App\Livewire\Admin\DashBoard as AdminDashboard;
+use App\Livewire\Admin\Register as AdminRegister;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 use App\Livewire\CarDetails;
@@ -18,6 +20,7 @@ use App\Livewire\RiderProfile;
 use App\Livewire\SearchResults;
 use App\Livewire\SignIn;
 use App\Livewire\ThankYouPage;
+use App\Livewire\UserPage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -61,6 +64,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', RiderProfile::class)->name('dashboard');
     Route::get('/lessor/register', LessorRegister::class)->name('lessorRegister');
+    /**admin register */
     Route::get('/car/register', CarRegister::class)->name('car_register')->middleware('lessorAuth');
     Route::get('/lessor/profile', LessorProfile::class)->name('lessor_profile')->middleware('lessorAuth');
     Route::get('request%sucesss', ThankYouPage::class)->name('requestsuccess');
@@ -72,10 +76,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/mpesa/payment/{riderId}/{requestedCarId}', [MpesaController::class, 'initiateStkPush'])->name('initiateStkPush');
     Route::get('thankyou/{requestId}', ThankYouPage::class)->name('thankyoupage');
 });
+Route::get('thankyou/{requestId}', ThankYouPage::class)->name('thankyoupage');
 
 Route::get('/error', function () {
     dd(session('error'));
 });
+// Example of a route that requires admin access
+Route::middleware(['admin'])->group(function () {
+    // Admin routes go here
+    Route::get('/admin/dashboard', AdminDashboard::class);
+});
+Route::get('/user/profile/{userId}', UserPage::class);
 
 /*
 *car owners

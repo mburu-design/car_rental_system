@@ -49,12 +49,12 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function driver(): HasOne{
+    public function driver(): HasOne
+    {
         return $this->hasOne(Riders::class);
-
     }
-    public function carOwner(): HasOne{
+    public function carOwner(): HasOne
+    {
         return $this->hasOne(CarOwners::class);
-
     }
 }

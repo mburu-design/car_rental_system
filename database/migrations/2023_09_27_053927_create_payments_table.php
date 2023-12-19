@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ride_requests_id')->references('id')->on('ride_requests')->onDelete('cascade');
+            $table->foreignId('riders_id')->references('id')->on('riders')->onDelete('cascade');
+            $table->foreignId('lessor_id')->references('id')->on('car_owners')->onDelete('cascade');
             $table->enum('payment_method', ['mpesa', 'card']);
             $table->float('amount');
             $table->string('transaction_code')->nullable();
@@ -23,7 +25,6 @@ return new class extends Migration
             $table->string('MerchantRequestID')->nullable();
             $table->string('CheckoutRequestID')->nullable();
             $table->enum('status', ['paid', 'requested', 'declined'])->default('requested');
-
             $table->timestamps();
         });
     }

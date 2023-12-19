@@ -5,50 +5,51 @@
     <div class="card-body">
         <div class="row">
             <div class="col-4">
-                <h6 class="fs-6">40 verified ratings</h6>
                 <div class="card  px-3 py-3">
-                    <div class="row"><strong class="text-warning text-start">4.9/5</strong></div>
+                    <div class="row"><strong class="text-warning text-start">{{$driverAverageRating}}/5</strong></div>
                     <div class="row  ">
                         <p class="d-flex text-center  text-warning">
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
+                            @for ($i = 0; $i < $driverAverageRating; $i++) <span><i class="fa fa-star"></i></span>
+                                @endfor
                         </p>
+
+
                     </div>
                     <div class="row ">
-                        <p class="text-start">40 verified ratings</p>
+                        <p class="text-start">{{$countReviewers}} verified ratings</p>
                     </div>
                 </div>
             </div>
             <div class="col-8">
                 <h6 class="f6-6 text-start">reviews</h6>
-                <div class="row">
-                    <p class="d-flex text-center  text-warning">
-                        <span><i class="fa fa-star"></i></span>
-                        <span><i class="fa fa-star"></i></span>
-                    </p>
-                </div>
-                <div class="row text-start">
-                    <div class="f6 my-2">review title</div>
-                </div>
-                <div class="row review body">
-                    <p class="text-start">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, porro!
-                    </p>
 
-                </div>
-                <div class="row">
-                    <p class="">
-                        <small class="text-start">date &nbsp; by &nbsp; ken mburu
-                        </small>
-                        <small class="text-end text-success">
-                            verified booking
-                        </small>
-                    </p>
+                @foreach ($reviews as $review)
+                <div class="card p-2">
 
+                    <div class="row text-start">
+                        <small class="f6 my-2 text-primary">{{$review->driverRater->user->firstName . "
+                            ".$review->driverRater->user->lastName}}</small>
+                    </div>
+                    <div class="row review body">
+                        <p class="text-start">
+                            {{$review->review_comments}}
+                        </p>
+
+                    </div>
+                    <div class="row">
+                        <p class="text-start">
+                            <small class="text-start">{{$review->updated_at}} &nbsp; by &nbsp;
+                                {{$review->driverRater->user->firstName . "
+                                ".$review->driverRater->user->lastName}}
+                            </small>
+                            <small class="text-end text-success">
+                                verified booking
+                            </small>
+                        </p>
+
+                    </div>
                 </div>
+                @endforeach
             </div>
         </div>
 

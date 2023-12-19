@@ -97,7 +97,6 @@ class MpesaController extends Controller
 
         if ($ResultCode == 0) {
 
-            session()->flash('ResultCode', 0);
             $this->statuCode = 0;
             $MerchantRequestID = $response['Body']['stkCallback']['MerchantRequestID'];
             $CheckoutRequestID = $response['Body']['stkCallback']['CheckoutRequestID'];
@@ -109,6 +108,8 @@ class MpesaController extends Controller
             $PhoneNumber = $response['Body']['stkCallback']['CallbackMetadata']['Item'][4]['Value'];
             $payment = new Payments();
             $payment->ride_requests_id = $request->ride_requests_id;
+            $payment->riders_id = RideRequests::where('id', $request->ride_requests_id)->value('riders_id');
+            $payment->lessor_id = RideRequests::where('id', $request->ride_requests_id)->value('car_owners_id');
             $payment->payment_method = "MPESA";
             $payment->payment_phone = $PhoneNumber;
             $payment->amount = $Amount;
@@ -157,6 +158,7 @@ class MpesaController extends Controller
             }
             if ($ResultCode == 0) {
                 session()->flash('ResultCode', 0);
+                session()->flash('CheckoutRequestID', $result['CheckoutRequestID']);
             }
         }
     }

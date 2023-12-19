@@ -33,4 +33,8 @@ class CarOwners extends Model
     {
         return $this->hasMany(Listings::class, 'car_owners_id');
     }
+    public function ratedRider(): HasMany
+    {
+        return $this->hasMany(DriverRatings::class);
+    }
 }

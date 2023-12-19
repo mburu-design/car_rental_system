@@ -156,9 +156,13 @@
               <button class="btn fav-btn" aria-label="Add to favourite list">
                 <ion-icon name="heart-outline"></ion-icon>
               </button>
-
+              @if ($car->status=='booked')
+              <button class="btn disabled">Booked</button>
+              @else
               <button class="btn" onclick="location.href='/car/details/{{$car->fleet()->value('id')}}';"
                 wire.navigate>Rent now</button>
+              @endif
+
             </div>
           </div>
         </div>

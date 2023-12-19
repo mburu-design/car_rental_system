@@ -3,28 +3,31 @@
 namespace App\Livewire;
 
 use App\Http\Controllers\MpesaController;
+use App\Models\Bookings;
 use App\Models\Payments;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
 class ThankYouPage extends Component
 {
-    public $requestId;
-    public $payment;
-    public $pickup_place;
-    #[On('pickupPlace')]
-    public function updatePickup($pickupPlace)
+    // public $requestId;
+    // public $payment;
+    // public $pickup_place;
+    // #[On('pickupPlace')]
+    // public function updatePickup($pickupPlace)
+    // {
+    //     $this->pickup_place = "kinuthia";
+    // }
+
+    public $bookingId;
+    public $listingId;
+
+    public function mount($requestId)
     {
-        $this->pickup_place = "kinuthia";
+        $this->bookingId = Bookings::where('ride_requests_id', $requestId)->value('id');
     }
 
-    // public function mount($requestId)
-    // {
-    //     $this->payment = new MpesaController();
-    //     $this->requestId = $requestId;
-    //     //  $this->payment==Payments::where('requestId',$this->$requestId);
 
-    // }
 
     public function render()
     {

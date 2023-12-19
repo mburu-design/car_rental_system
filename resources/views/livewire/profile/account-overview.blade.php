@@ -1,5 +1,5 @@
 <div class="">
-     <div class="row">
+    <div class="row">
         <div class="col-6">
             <div class="card m-2">
                 <div class="card-header">
@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-9">
                             <p>
-                                KENNEDY MBURU
+                                {{Auth::user()->firstName . " ".Auth::user()->lastName }}
                             </p>
                         </div>
                     </div>
@@ -28,9 +28,9 @@
                         </div>
                         <div class="col-9">
                             <p>
-                                <?php
-                                    echo today();
-                                ?>
+
+                                {{Auth::user()->DOB}}
+
                             </p>
                         </div>
                     </div>
@@ -53,7 +53,8 @@
                         </div>
                         <div class="col-9">
                             <p class="fs-6">
-                                0713408025
+                                <a href="tel: {{Auth::user()->telephone}}"> {{Auth::user()->telephone}}</a>
+
                             </p>
                         </div>
                     </div>
@@ -65,7 +66,7 @@
                         </div>
                         <div class="col-9">
                             <p class="fs-6">
-                                mburukennedy67@gmail.com
+                                <a href="mailto: {{Auth::user()->email}}"> {{Auth::user()->email}}</a>
                             </p>
                         </div>
                     </div>
@@ -83,26 +84,37 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-4">
                             <h6 class="fs-6">
                                 ID number
                             </h6>
                         </div>
-                        <div class="col-9">
+                        <div class="col-8">
                             <p>
-                                37928954
+                                @if ($rider !== null)
+                                {{$rider->ID_number}}
+
+                                @else
+                                null
+                                @endif
+
                             </p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-4">
                             <h6 class="fs-6">
                                 DL number
                             </h6>
                         </div>
-                        <div class="col-9">
+                        <div class="col-8">
                             <p>
-                                38579289549
+                                @if ($rider !== null)
+                                {{$rider->driver_license_number}}
+
+                                @else
+                                null
+                                @endif
                             </p>
                         </div>
                     </div>
@@ -137,12 +149,17 @@
                         </div>
                         <div class="col-6">
                             <p>
-                                0713408025
+                                @if ($rider !== null)
+                                {{$rider->payment_phone}}
+
+                                @else
+                                null
+                                @endif
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 </div>

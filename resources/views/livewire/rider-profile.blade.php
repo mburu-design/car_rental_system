@@ -39,7 +39,7 @@
                         </div>
                     </button>
                 </div>
-                <div class="row mx-2 my-3">
+                {{-- <div class="row mx-2 my-3">
                     <button class="nav-link  d-flex" wire:click="myRides">
                         <div class="col-2 icon">
                             <i class="fa fa-car"></i>
@@ -48,7 +48,7 @@
                             My rides
                         </div>
                     </button>
-                </div>
+                </div> --}}
                 <div class="row mx-2 my-3">
                     <button class="nav-link  d-flex" wire:click="myRatings">
                         <div class="col-2 icon color-primary">
@@ -75,22 +75,22 @@
 
                 </div>
                 <div class="row mx-2 my-3">
-                    <a href="{{ route('rider-profile.payments') }}" class="nav-link  d-flex">
+                    {{-- <a href="{{ route('rider-profile.payments') }}" class="nav-link  d-flex">
                         <div class="col-2 icon">
                             <i class="fas fa-money-check-alt"></i>
                         </div>
                         <div class="col-10 description">
                             Payment Details
                         </div>
-                    </a>
-                    {{-- <button class="nav-link  d-flex" wire:click="myPayments">
+                    </a> --}}
+                    <button class="nav-link  d-flex" wire:click="myPayments">
                         <div class="col-2 icon">
                             <i class="fas fa-money-check-alt"></i>
                         </div>
                         <div class="col-10 description">
                             Payment Details
                         </div>
-                    </button> --}}
+                    </button>
                     <div class="row mx-2 my-3">
                         <button class="nav-link  d-flex" wire:click="myPayments">
 
@@ -102,9 +102,10 @@
         <div class="col-9">
             <div class="card">
 
-                @if (request()->route()->getName()== 'rider-profile.payments')
+                {{-- @if (request()->route()->getName()== 'rider-profile.payments')
+
                 @livewire('profile.payments')
-                @endif
+                @endif --}}
                 @if ($setView==0)
                 @livewire('profile.account-overview')
 
@@ -124,7 +125,8 @@
                 @livewire('profile.notifications')
 
 
-
+                @elseif($setView==6)
+                @livewire('profile.payments')
                 @elseif($setView==7)
                 <h1>{{$setView}}</h1>
 

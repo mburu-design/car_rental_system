@@ -229,11 +229,13 @@
   }
   
   .h2,
-  .h3 { font-weight: var(--fw-400); }
+  .h3,
+  .h4 { font-weight: var(--fw-400); }
   
   .h2 { font-size: var(--fs-2); }
   
   .h3 { font-size: var(--fs-4); }
+  .h4 { font-size: var(--fs-5); }
   
   .w-100 { width: 100%; }
   

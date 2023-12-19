@@ -23,6 +23,11 @@
       <li>
         <a href="#" class="navbar-link" data-nav-link>About us</a>
       </li>
+      @if ( Auth::check() && Auth::user()->isAdmin == 1)
+      <li>
+        <a href="/admin/dashboard" class="navbar-link" data-nav-link>Admin</a>
+      </li>
+      @endif
 
       <li>
         <a href="#blog" class="navbar-link" data-nav-link>

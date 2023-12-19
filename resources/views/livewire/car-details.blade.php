@@ -62,10 +62,46 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <figure class="card-banner">
+                    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+
+                                <img src="{{Storage::url($listedCar->fleet()->value('exterior_front_image'))}}"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{Storage::url($listedCar->fleet()->value('exterior_side_image'))}}"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{Storage::url($listedCar->fleet()->value('exterior_rear_image'))}}"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{Storage::url($listedCar->fleet()->value('interior_front_image'))}}"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{Storage::url($listedCar->fleet()->value('interior_back_image'))}}"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    {{-- <figure class="card-banner">
+
                         <img src="{{Storage::url($listedCar->fleet()->value('exterior_front_image'))}}"
                             alt="Volkswagen T-Cross 2020" loading="lazy" class=" img img-fluid rounded w-100">
-                    </figure>
+                    </figure> --}}
                 </div>
             </div>
         </div>

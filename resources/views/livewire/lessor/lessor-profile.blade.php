@@ -53,19 +53,7 @@
                         </div>
                     </button>
                 </div>
-                <div class="row mx-2 my-3">
-                    <button class="nav-link  d-flex" wire:click="myRatings">
-                        <div class="col-2 icon color-primary">
-                            <span class="fa fa-star checked "></span>
 
-                        </div>
-                        <div class="col-10 description">
-                            My Car ratings
-                        </div>
-                    </button>
-
-
-                </div>
                 <div class="row mx-2 my-3">
                     <button class="nav-link  d-flex" wire:click="myInbox">
                         <div class="col-2 icon">
